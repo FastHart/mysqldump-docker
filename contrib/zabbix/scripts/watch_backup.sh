@@ -48,6 +48,9 @@ while (<LOG_FILE>)
     }
 close LOG_FILE;
 
+# mask double quotes in error
+$founded_error_line =~ s/"/\\"/g;
+
 if ($founded_error_line){system "$zabbix_sender -c $zabbix_conf -k $zabbix_key -o \"PROBLEM: $founded_error_line\"";}
 else {system "$zabbix_sender -c $zabbix_conf -k $zabbix_key -o \"OK\"";}
 
