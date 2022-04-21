@@ -1,0 +1,6 @@
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+#m   h  dom mon dow user  command
+09   07 *   *   6   root  /root/bin/mysqldump-docker/mysqldump-docker.sh [CONTAINER] [DB] >/tmp/mysqldump-docker.log 2>&1
+
+# send Backup result to zabbix
+55   *  *   *   *   root /etc/zabbix/scripts/watch_backup.sh > /dev/null 2>&1

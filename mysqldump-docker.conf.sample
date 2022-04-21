@@ -1,0 +1,8 @@
+BACKUPSTORE='/home/backup/dumps'
+DBUSER='root'
+DBPASS='pass'
+BACKUP_OWNER='root'
+RETENTION=30
+LOG_FACILITY='local1'
+LOG_LEVEL='notice'
+LOG_LEVEL_ERR='error'
