@@ -26,7 +26,7 @@ FILENAME="${DATABASE}_${TIMESTAMP}.gz"
 
 say "Starting dump database ${DATABASE} to ${BACKUPSTORE}/${FILENAME}"
 LockSet
-OUT=$({/usr/bin/mysqldump -u ${DBUSER} --password=${DBPASS} ${DATABASE} | gzip - > ${BACKUPSTORE}/${FILENAME}; } 2>&1) || err "Unable to create dump: $OUT"
+OUT=$({ /usr/bin/mysqldump -u ${DBUSER} --password=${DBPASS} ${DATABASE} | gzip - > ${BACKUPSTORE}/${FILENAME}; } 2>&1) || err "Unable to create dump: $OUT"
 OUT=$(chown $BACKUP_OWNER ${BACKUPSTORE}/${FILENAME} 2>&1) || err "Unable to chown file: ${OUT}"
 OUT=$(find $BACKUPSTORE -ctime +$RETENTION -delete 2>&1) || err "Unable to delete old files: ${OUT}"
 
