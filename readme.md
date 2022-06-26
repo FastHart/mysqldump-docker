@@ -5,8 +5,8 @@ Intended to be to run from cron.
 
 This script do the follows:
 
-- Create gzipped mysqldump named as ${DATABASE}_${TIMESTAMP}.gz in ${BACKUPSTORE} directory
-- Delete dumps older than ${RETENTION} days
+- Create gzipped mysqldump named as `${DATABASE}_${TIMESTAMP}.gz` in `${BACKUPSTORE}` directory
+- Delete dumps older than `${RETENTION}` days
 - Write output to syslog
 
 ### Usage:
